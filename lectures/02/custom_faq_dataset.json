@@ -1,0 +1,520 @@
+{
+  "faq": "AIE2026 Cloud & Development Environment FAQ (only the 5 items below are decided; anything else requires checking with the course staff)\n1. Codespaces allowance: Personal GitHub accounts receive 120 core-hours per month free (about 60 hours on a 2-core machine).\n2. Colab GPU runtime: Use an NVIDIA T4 GPU (16 GB VRAM) on the Google Colab free tier for Lecture 02 LoRA training.\n3. API key management: Store your Gemini API key in the GEMINI_API_KEY environment variable via GitHub Codespaces Secrets.\n4. Test command: Run automated tests with `uv run pytest -q` (runs offline using TestModel without an API key).\n5. Submission workflow: Push your session branch (such as lec01 or lec02) and open a Pull Request to `main` within your own fork.",
+  "counts": {
+    "train": 14,
+    "valid": 7,
+    "test": 21
+  },
+  "train": [
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer questions about the AIE2026 development environment based only on the FAQ below.\nOutput a single-line JSON object in the form {\"answer\": \"<answer>\", \"needs_review\": <true|false>}, with nothing before or after it.\n- Can be answered from the FAQ: put a concise answer in answer and set needs_review to false\n- Not in the FAQ or cannot be determined: set answer to \"This is not covered in the FAQ. Please check with the course staff.\" and needs_review to true\n\nAIE2026 Cloud & Development Environment FAQ (only the 5 items below are decided; anything else requires checking with the course staff)\n1. Codespaces allowance: Personal GitHub accounts receive 120 core-hours per month free (about 60 hours on a 2-core machine).\n2. Colab GPU runtime: Use an NVIDIA T4 GPU (16 GB VRAM) on the Google Colab free tier for Lecture 02 LoRA training.\n3. API key management: Store your Gemini API key in the GEMINI_API_KEY environment variable via GitHub Codespaces Secrets.\n4. Test command: Run automated tests with `uv run pytest -q` (runs offline using TestModel without an API key).\n5. Submission workflow: Push your session branch (such as lec01 or lec02) and open a Pull Request to `main` within your own fork."
+        },
+        {
+          "role": "user",
+          "content": "Should I open a PR to the upstream repo or to main in my own fork?"
+        },
+        {
+          "role": "assistant",
+          "content": "{\"answer\": \"Push your session branch (such as lec01 or lec02) and open a Pull Request to `main` within your own fork.\", \"needs_review\": false}"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer questions about the AIE2026 development environment based only on the FAQ below.\nOutput a single-line JSON object in the form {\"answer\": \"<answer>\", \"needs_review\": <true|false>}, with nothing before or after it.\n- Can be answered from the FAQ: put a concise answer in answer and set needs_review to false\n- Not in the FAQ or cannot be determined: set answer to \"This is not covered in the FAQ. Please check with the course staff.\" and needs_review to true\n\nAIE2026 Cloud & Development Environment FAQ (only the 5 items below are decided; anything else requires checking with the course staff)\n1. Codespaces allowance: Personal GitHub accounts receive 120 core-hours per month free (about 60 hours on a 2-core machine).\n2. Colab GPU runtime: Use an NVIDIA T4 GPU (16 GB VRAM) on the Google Colab free tier for Lecture 02 LoRA training.\n3. API key management: Store your Gemini API key in the GEMINI_API_KEY environment variable via GitHub Codespaces Secrets.\n4. Test command: Run automated tests with `uv run pytest -q` (runs offline using TestModel without an API key).\n5. Submission workflow: Push your session branch (such as lec01 or lec02) and open a Pull Request to `main` within your own fork."
+        },
+        {
+          "role": "user",
+          "content": "Please tell me how to configure the Gemini API key safely."
+        },
+        {
+          "role": "assistant",
+          "content": "{\"answer\": \"Store your Gemini API key in the GEMINI_API_KEY environment variable via GitHub Codespaces Secrets.\", \"needs_review\": false}"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer questions about the AIE2026 development environment based only on the FAQ below.\nOutput a single-line JSON object in the form {\"answer\": \"<answer>\", \"needs_review\": <true|false>}, with nothing before or after it.\n- Can be answered from the FAQ: put a concise answer in answer and set needs_review to false\n- Not in the FAQ or cannot be determined: set answer to \"This is not covered in the FAQ. Please check with the course staff.\" and needs_review to true\n\nAIE2026 Cloud & Development Environment FAQ (only the 5 items below are decided; anything else requires checking with the course staff)\n1. Codespaces allowance: Personal GitHub accounts receive 120 core-hours per month free (about 60 hours on a 2-core machine).\n2. Colab GPU runtime: Use an NVIDIA T4 GPU (16 GB VRAM) on the Google Colab free tier for Lecture 02 LoRA training.\n3. API key management: Store your Gemini API key in the GEMINI_API_KEY environment variable via GitHub Codespaces Secrets.\n4. Test command: Run automated tests with `uv run pytest -q` (runs offline using TestModel without an API key).\n5. Submission workflow: Push your session branch (such as lec01 or lec02) and open a Pull Request to `main` within your own fork."
+        },
+        {
+          "role": "user",
+          "content": "What hardware accelerator should I use in Google Colab?"
+        },
+        {
+          "role": "assistant",
+          "content": "{\"answer\": \"Use an NVIDIA T4 GPU (16 GB VRAM) on the Google Colab free tier for Lecture 02 LoRA training.\", \"needs_review\": false}"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer questions about the AIE2026 development environment based only on the FAQ below.\nOutput a single-line JSON object in the form {\"answer\": \"<answer>\", \"needs_review\": <true|false>}, with nothing before or after it.\n- Can be answered from the FAQ: put a concise answer in answer and set needs_review to false\n- Not in the FAQ or cannot be determined: set answer to \"This is not covered in the FAQ. Please check with the course staff.\" and needs_review to true\n\nAIE2026 Cloud & Development Environment FAQ (only the 5 items below are decided; anything else requires checking with the course staff)\n1. Codespaces allowance: Personal GitHub accounts receive 120 core-hours per month free (about 60 hours on a 2-core machine).\n2. Colab GPU runtime: Use an NVIDIA T4 GPU (16 GB VRAM) on the Google Colab free tier for Lecture 02 LoRA training.\n3. API key management: Store your Gemini API key in the GEMINI_API_KEY environment variable via GitHub Codespaces Secrets.\n4. Test command: Run automated tests with `uv run pytest -q` (runs offline using TestModel without an API key).\n5. Submission workflow: Push your session branch (such as lec01 or lec02) and open a Pull Request to `main` within your own fork."
+        },
+        {
+          "role": "user",
+          "content": "When will the Outstanding Student awards be announced?"
+        },
+        {
+          "role": "assistant",
+          "content": "{\"answer\": \"This is not covered in the FAQ. Please check with the course staff.\", \"needs_review\": true}"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer questions about the AIE2026 development environment based only on the FAQ below.\nOutput a single-line JSON object in the form {\"answer\": \"<answer>\", \"needs_review\": <true|false>}, with nothing before or after it.\n- Can be answered from the FAQ: put a concise answer in answer and set needs_review to false\n- Not in the FAQ or cannot be determined: set answer to \"This is not covered in the FAQ. Please check with the course staff.\" and needs_review to true\n\nAIE2026 Cloud & Development Environment FAQ (only the 5 items below are decided; anything else requires checking with the course staff)\n1. Codespaces allowance: Personal GitHub accounts receive 120 core-hours per month free (about 60 hours on a 2-core machine).\n2. Colab GPU runtime: Use an NVIDIA T4 GPU (16 GB VRAM) on the Google Colab free tier for Lecture 02 LoRA training.\n3. API key management: Store your Gemini API key in the GEMINI_API_KEY environment variable via GitHub Codespaces Secrets.\n4. Test command: Run automated tests with `uv run pytest -q` (runs offline using TestModel without an API key).\n5. Submission workflow: Push your session branch (such as lec01 or lec02) and open a Pull Request to `main` within your own fork."
+        },
+        {
+          "role": "user",
+          "content": "Does the Google Colab free tier guarantee an NVIDIA A100 GPU for Lecture 02?"
+        },
+        {
+          "role": "assistant",
+          "content": "{\"answer\": \"This is not covered in the FAQ. Please check with the course staff.\", \"needs_review\": true}"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer questions about the AIE2026 development environment based only on the FAQ below.\nOutput a single-line JSON object in the form {\"answer\": \"<answer>\", \"needs_review\": <true|false>}, with nothing before or after it.\n- Can be answered from the FAQ: put a concise answer in answer and set needs_review to false\n- Not in the FAQ or cannot be determined: set answer to \"This is not covered in the FAQ. Please check with the course staff.\" and needs_review to true\n\nAIE2026 Cloud & Development Environment FAQ (only the 5 items below are decided; anything else requires checking with the course staff)\n1. Codespaces allowance: Personal GitHub accounts receive 120 core-hours per month free (about 60 hours on a 2-core machine).\n2. Colab GPU runtime: Use an NVIDIA T4 GPU (16 GB VRAM) on the Google Colab free tier for Lecture 02 LoRA training.\n3. API key management: Store your Gemini API key in the GEMINI_API_KEY environment variable via GitHub Codespaces Secrets.\n4. Test command: Run automated tests with `uv run pytest -q` (runs offline using TestModel without an API key).\n5. Submission workflow: Push your session branch (such as lec01 or lec02) and open a Pull Request to `main` within your own fork."
+        },
+        {
+          "role": "user",
+          "content": "Please tell me the monthly free limit for GitHub Codespaces."
+        },
+        {
+          "role": "assistant",
+          "content": "{\"answer\": \"Personal GitHub accounts receive 120 core-hours per month free (about 60 hours on a 2-core machine).\", \"needs_review\": false}"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer questions about the AIE2026 development environment based only on the FAQ below.\nOutput a single-line JSON object in the form {\"answer\": \"<answer>\", \"needs_review\": <true|false>}, with nothing before or after it.\n- Can be answered from the FAQ: put a concise answer in answer and set needs_review to false\n- Not in the FAQ or cannot be determined: set answer to \"This is not covered in the FAQ. Please check with the course staff.\" and needs_review to true\n\nAIE2026 Cloud & Development Environment FAQ (only the 5 items below are decided; anything else requires checking with the course staff)\n1. Codespaces allowance: Personal GitHub accounts receive 120 core-hours per month free (about 60 hours on a 2-core machine).\n2. Colab GPU runtime: Use an NVIDIA T4 GPU (16 GB VRAM) on the Google Colab free tier for Lecture 02 LoRA training.\n3. API key management: Store your Gemini API key in the GEMINI_API_KEY environment variable via GitHub Codespaces Secrets.\n4. Test command: Run automated tests with `uv run pytest -q` (runs offline using TestModel without an API key).\n5. Submission workflow: Push your session branch (such as lec01 or lec02) and open a Pull Request to `main` within your own fork."
+        },
+        {
+          "role": "user",
+          "content": "When will the Outstanding Student awards be announced?"
+        },
+        {
+          "role": "assistant",
+          "content": "{\"answer\": \"This is not covered in the FAQ. Please check with the course staff.\", \"needs_review\": true}"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer questions about the AIE2026 development environment based only on the FAQ below.\nOutput a single-line JSON object in the form {\"answer\": \"<answer>\", \"needs_review\": <true|false>}, with nothing before or after it.\n- Can be answered from the FAQ: put a concise answer in answer and set needs_review to false\n- Not in the FAQ or cannot be determined: set answer to \"This is not covered in the FAQ. Please check with the course staff.\" and needs_review to true\n\nAIE2026 Cloud & Development Environment FAQ (only the 5 items below are decided; anything else requires checking with the course staff)\n1. Codespaces allowance: Personal GitHub accounts receive 120 core-hours per month free (about 60 hours on a 2-core machine).\n2. Colab GPU runtime: Use an NVIDIA T4 GPU (16 GB VRAM) on the Google Colab free tier for Lecture 02 LoRA training.\n3. API key management: Store your Gemini API key in the GEMINI_API_KEY environment variable via GitHub Codespaces Secrets.\n4. Test command: Run automated tests with `uv run pytest -q` (runs offline using TestModel without an API key).\n5. Submission workflow: Push your session branch (such as lec01 or lec02) and open a Pull Request to `main` within your own fork."
+        },
+        {
+          "role": "user",
+          "content": "How do I execute the unit tests without an API key?"
+        },
+        {
+          "role": "assistant",
+          "content": "{\"answer\": \"Run automated tests with `uv run pytest -q` (runs offline using TestModel without an API key).\", \"needs_review\": false}"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer questions about the AIE2026 development environment based only on the FAQ below.\nOutput a single-line JSON object in the form {\"answer\": \"<answer>\", \"needs_review\": <true|false>}, with nothing before or after it.\n- Can be answered from the FAQ: put a concise answer in answer and set needs_review to false\n- Not in the FAQ or cannot be determined: set answer to \"This is not covered in the FAQ. Please check with the course staff.\" and needs_review to true\n\nAIE2026 Cloud & Development Environment FAQ (only the 5 items below are decided; anything else requires checking with the course staff)\n1. Codespaces allowance: Personal GitHub accounts receive 120 core-hours per month free (about 60 hours on a 2-core machine).\n2. Colab GPU runtime: Use an NVIDIA T4 GPU (16 GB VRAM) on the Google Colab free tier for Lecture 02 LoRA training.\n3. API key management: Store your Gemini API key in the GEMINI_API_KEY environment variable via GitHub Codespaces Secrets.\n4. Test command: Run automated tests with `uv run pytest -q` (runs offline using TestModel without an API key).\n5. Submission workflow: Push your session branch (such as lec01 or lec02) and open a Pull Request to `main` within your own fork."
+        },
+        {
+          "role": "user",
+          "content": "What hardware accelerator should I use in Google Colab?"
+        },
+        {
+          "role": "assistant",
+          "content": "{\"answer\": \"Use an NVIDIA T4 GPU (16 GB VRAM) on the Google Colab free tier for Lecture 02 LoRA training.\", \"needs_review\": false}"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer questions about the AIE2026 development environment based only on the FAQ below.\nOutput a single-line JSON object in the form {\"answer\": \"<answer>\", \"needs_review\": <true|false>}, with nothing before or after it.\n- Can be answered from the FAQ: put a concise answer in answer and set needs_review to false\n- Not in the FAQ or cannot be determined: set answer to \"This is not covered in the FAQ. Please check with the course staff.\" and needs_review to true\n\nAIE2026 Cloud & Development Environment FAQ (only the 5 items below are decided; anything else requires checking with the course staff)\n1. Codespaces allowance: Personal GitHub accounts receive 120 core-hours per month free (about 60 hours on a 2-core machine).\n2. Colab GPU runtime: Use an NVIDIA T4 GPU (16 GB VRAM) on the Google Colab free tier for Lecture 02 LoRA training.\n3. API key management: Store your Gemini API key in the GEMINI_API_KEY environment variable via GitHub Codespaces Secrets.\n4. Test command: Run automated tests with `uv run pytest -q` (runs offline using TestModel without an API key).\n5. Submission workflow: Push your session branch (such as lec01 or lec02) and open a Pull Request to `main` within your own fork."
+        },
+        {
+          "role": "user",
+          "content": "Does the Google Colab free tier guarantee an NVIDIA A100 GPU for Lecture 02?"
+        },
+        {
+          "role": "assistant",
+          "content": "{\"answer\": \"This is not covered in the FAQ. Please check with the course staff.\", \"needs_review\": true}"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer questions about the AIE2026 development environment based only on the FAQ below.\nOutput a single-line JSON object in the form {\"answer\": \"<answer>\", \"needs_review\": <true|false>}, with nothing before or after it.\n- Can be answered from the FAQ: put a concise answer in answer and set needs_review to false\n- Not in the FAQ or cannot be determined: set answer to \"This is not covered in the FAQ. Please check with the course staff.\" and needs_review to true\n\nAIE2026 Cloud & Development Environment FAQ (only the 5 items below are decided; anything else requires checking with the course staff)\n1. Codespaces allowance: Personal GitHub accounts receive 120 core-hours per month free (about 60 hours on a 2-core machine).\n2. Colab GPU runtime: Use an NVIDIA T4 GPU (16 GB VRAM) on the Google Colab free tier for Lecture 02 LoRA training.\n3. API key management: Store your Gemini API key in the GEMINI_API_KEY environment variable via GitHub Codespaces Secrets.\n4. Test command: Run automated tests with `uv run pytest -q` (runs offline using TestModel without an API key).\n5. Submission workflow: Push your session branch (such as lec01 or lec02) and open a Pull Request to `main` within your own fork."
+        },
+        {
+          "role": "user",
+          "content": "How do I execute the unit tests without an API key?"
+        },
+        {
+          "role": "assistant",
+          "content": "{\"answer\": \"Run automated tests with `uv run pytest -q` (runs offline using TestModel without an API key).\", \"needs_review\": false}"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer questions about the AIE2026 development environment based only on the FAQ below.\nOutput a single-line JSON object in the form {\"answer\": \"<answer>\", \"needs_review\": <true|false>}, with nothing before or after it.\n- Can be answered from the FAQ: put a concise answer in answer and set needs_review to false\n- Not in the FAQ or cannot be determined: set answer to \"This is not covered in the FAQ. Please check with the course staff.\" and needs_review to true\n\nAIE2026 Cloud & Development Environment FAQ (only the 5 items below are decided; anything else requires checking with the course staff)\n1. Codespaces allowance: Personal GitHub accounts receive 120 core-hours per month free (about 60 hours on a 2-core machine).\n2. Colab GPU runtime: Use an NVIDIA T4 GPU (16 GB VRAM) on the Google Colab free tier for Lecture 02 LoRA training.\n3. API key management: Store your Gemini API key in the GEMINI_API_KEY environment variable via GitHub Codespaces Secrets.\n4. Test command: Run automated tests with `uv run pytest -q` (runs offline using TestModel without an API key).\n5. Submission workflow: Push your session branch (such as lec01 or lec02) and open a Pull Request to `main` within your own fork."
+        },
+        {
+          "role": "user",
+          "content": "Please tell me how to configure the Gemini API key safely."
+        },
+        {
+          "role": "assistant",
+          "content": "{\"answer\": \"Store your Gemini API key in the GEMINI_API_KEY environment variable via GitHub Codespaces Secrets.\", \"needs_review\": false}"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer questions about the AIE2026 development environment based only on the FAQ below.\nOutput a single-line JSON object in the form {\"answer\": \"<answer>\", \"needs_review\": <true|false>}, with nothing before or after it.\n- Can be answered from the FAQ: put a concise answer in answer and set needs_review to false\n- Not in the FAQ or cannot be determined: set answer to \"This is not covered in the FAQ. Please check with the course staff.\" and needs_review to true\n\nAIE2026 Cloud & Development Environment FAQ (only the 5 items below are decided; anything else requires checking with the course staff)\n1. Codespaces allowance: Personal GitHub accounts receive 120 core-hours per month free (about 60 hours on a 2-core machine).\n2. Colab GPU runtime: Use an NVIDIA T4 GPU (16 GB VRAM) on the Google Colab free tier for Lecture 02 LoRA training.\n3. API key management: Store your Gemini API key in the GEMINI_API_KEY environment variable via GitHub Codespaces Secrets.\n4. Test command: Run automated tests with `uv run pytest -q` (runs offline using TestModel without an API key).\n5. Submission workflow: Push your session branch (such as lec01 or lec02) and open a Pull Request to `main` within your own fork."
+        },
+        {
+          "role": "user",
+          "content": "Should I open a PR to the upstream repo or to main in my own fork?"
+        },
+        {
+          "role": "assistant",
+          "content": "{\"answer\": \"Push your session branch (such as lec01 or lec02) and open a Pull Request to `main` within your own fork.\", \"needs_review\": false}"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer questions about the AIE2026 development environment based only on the FAQ below.\nOutput a single-line JSON object in the form {\"answer\": \"<answer>\", \"needs_review\": <true|false>}, with nothing before or after it.\n- Can be answered from the FAQ: put a concise answer in answer and set needs_review to false\n- Not in the FAQ or cannot be determined: set answer to \"This is not covered in the FAQ. Please check with the course staff.\" and needs_review to true\n\nAIE2026 Cloud & Development Environment FAQ (only the 5 items below are decided; anything else requires checking with the course staff)\n1. Codespaces allowance: Personal GitHub accounts receive 120 core-hours per month free (about 60 hours on a 2-core machine).\n2. Colab GPU runtime: Use an NVIDIA T4 GPU (16 GB VRAM) on the Google Colab free tier for Lecture 02 LoRA training.\n3. API key management: Store your Gemini API key in the GEMINI_API_KEY environment variable via GitHub Codespaces Secrets.\n4. Test command: Run automated tests with `uv run pytest -q` (runs offline using TestModel without an API key).\n5. Submission workflow: Push your session branch (such as lec01 or lec02) and open a Pull Request to `main` within your own fork."
+        },
+        {
+          "role": "user",
+          "content": "Please tell me the monthly free limit for GitHub Codespaces."
+        },
+        {
+          "role": "assistant",
+          "content": "{\"answer\": \"Personal GitHub accounts receive 120 core-hours per month free (about 60 hours on a 2-core machine).\", \"needs_review\": false}"
+        }
+      ]
+    }
+  ],
+  "valid": [
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer questions about the AIE2026 development environment based only on the FAQ below.\nOutput a single-line JSON object in the form {\"answer\": \"<answer>\", \"needs_review\": <true|false>}, with nothing before or after it.\n- Can be answered from the FAQ: put a concise answer in answer and set needs_review to false\n- Not in the FAQ or cannot be determined: set answer to \"This is not covered in the FAQ. Please check with the course staff.\" and needs_review to true\n\nAIE2026 Cloud & Development Environment FAQ (only the 5 items below are decided; anything else requires checking with the course staff)\n1. Codespaces allowance: Personal GitHub accounts receive 120 core-hours per month free (about 60 hours on a 2-core machine).\n2. Colab GPU runtime: Use an NVIDIA T4 GPU (16 GB VRAM) on the Google Colab free tier for Lecture 02 LoRA training.\n3. API key management: Store your Gemini API key in the GEMINI_API_KEY environment variable via GitHub Codespaces Secrets.\n4. Test command: Run automated tests with `uv run pytest -q` (runs offline using TestModel without an API key).\n5. Submission workflow: Push your session branch (such as lec01 or lec02) and open a Pull Request to `main` within your own fork."
+        },
+        {
+          "role": "user",
+          "content": "How many core-hours per month do personal GitHub accounts get in Codespaces?"
+        },
+        {
+          "role": "assistant",
+          "content": "{\"answer\": \"Personal GitHub accounts receive 120 core-hours per month free (about 60 hours on a 2-core machine).\", \"needs_review\": false}"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer questions about the AIE2026 development environment based only on the FAQ below.\nOutput a single-line JSON object in the form {\"answer\": \"<answer>\", \"needs_review\": <true|false>}, with nothing before or after it.\n- Can be answered from the FAQ: put a concise answer in answer and set needs_review to false\n- Not in the FAQ or cannot be determined: set answer to \"This is not covered in the FAQ. Please check with the course staff.\" and needs_review to true\n\nAIE2026 Cloud & Development Environment FAQ (only the 5 items below are decided; anything else requires checking with the course staff)\n1. Codespaces allowance: Personal GitHub accounts receive 120 core-hours per month free (about 60 hours on a 2-core machine).\n2. Colab GPU runtime: Use an NVIDIA T4 GPU (16 GB VRAM) on the Google Colab free tier for Lecture 02 LoRA training.\n3. API key management: Store your Gemini API key in the GEMINI_API_KEY environment variable via GitHub Codespaces Secrets.\n4. Test command: Run automated tests with `uv run pytest -q` (runs offline using TestModel without an API key).\n5. Submission workflow: Push your session branch (such as lec01 or lec02) and open a Pull Request to `main` within your own fork."
+        },
+        {
+          "role": "user",
+          "content": "Please tell me the Colab GPU type and VRAM size for the exercise."
+        },
+        {
+          "role": "assistant",
+          "content": "{\"answer\": \"Use an NVIDIA T4 GPU (16 GB VRAM) on the Google Colab free tier for Lecture 02 LoRA training.\", \"needs_review\": false}"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer questions about the AIE2026 development environment based only on the FAQ below.\nOutput a single-line JSON object in the form {\"answer\": \"<answer>\", \"needs_review\": <true|false>}, with nothing before or after it.\n- Can be answered from the FAQ: put a concise answer in answer and set needs_review to false\n- Not in the FAQ or cannot be determined: set answer to \"This is not covered in the FAQ. Please check with the course staff.\" and needs_review to true\n\nAIE2026 Cloud & Development Environment FAQ (only the 5 items below are decided; anything else requires checking with the course staff)\n1. Codespaces allowance: Personal GitHub accounts receive 120 core-hours per month free (about 60 hours on a 2-core machine).\n2. Colab GPU runtime: Use an NVIDIA T4 GPU (16 GB VRAM) on the Google Colab free tier for Lecture 02 LoRA training.\n3. API key management: Store your Gemini API key in the GEMINI_API_KEY environment variable via GitHub Codespaces Secrets.\n4. Test command: Run automated tests with `uv run pytest -q` (runs offline using TestModel without an API key).\n5. Submission workflow: Push your session branch (such as lec01 or lec02) and open a Pull Request to `main` within your own fork."
+        },
+        {
+          "role": "user",
+          "content": "What environment variable name is used for the Gemini API key?"
+        },
+        {
+          "role": "assistant",
+          "content": "{\"answer\": \"Store your Gemini API key in the GEMINI_API_KEY environment variable via GitHub Codespaces Secrets.\", \"needs_review\": false}"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer questions about the AIE2026 development environment based only on the FAQ below.\nOutput a single-line JSON object in the form {\"answer\": \"<answer>\", \"needs_review\": <true|false>}, with nothing before or after it.\n- Can be answered from the FAQ: put a concise answer in answer and set needs_review to false\n- Not in the FAQ or cannot be determined: set answer to \"This is not covered in the FAQ. Please check with the course staff.\" and needs_review to true\n\nAIE2026 Cloud & Development Environment FAQ (only the 5 items below are decided; anything else requires checking with the course staff)\n1. Codespaces allowance: Personal GitHub accounts receive 120 core-hours per month free (about 60 hours on a 2-core machine).\n2. Colab GPU runtime: Use an NVIDIA T4 GPU (16 GB VRAM) on the Google Colab free tier for Lecture 02 LoRA training.\n3. API key management: Store your Gemini API key in the GEMINI_API_KEY environment variable via GitHub Codespaces Secrets.\n4. Test command: Run automated tests with `uv run pytest -q` (runs offline using TestModel without an API key).\n5. Submission workflow: Push your session branch (such as lec01 or lec02) and open a Pull Request to `main` within your own fork."
+        },
+        {
+          "role": "user",
+          "content": "Please tell me the pytest command used in this repository."
+        },
+        {
+          "role": "assistant",
+          "content": "{\"answer\": \"Run automated tests with `uv run pytest -q` (runs offline using TestModel without an API key).\", \"needs_review\": false}"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer questions about the AIE2026 development environment based only on the FAQ below.\nOutput a single-line JSON object in the form {\"answer\": \"<answer>\", \"needs_review\": <true|false>}, with nothing before or after it.\n- Can be answered from the FAQ: put a concise answer in answer and set needs_review to false\n- Not in the FAQ or cannot be determined: set answer to \"This is not covered in the FAQ. Please check with the course staff.\" and needs_review to true\n\nAIE2026 Cloud & Development Environment FAQ (only the 5 items below are decided; anything else requires checking with the course staff)\n1. Codespaces allowance: Personal GitHub accounts receive 120 core-hours per month free (about 60 hours on a 2-core machine).\n2. Colab GPU runtime: Use an NVIDIA T4 GPU (16 GB VRAM) on the Google Colab free tier for Lecture 02 LoRA training.\n3. API key management: Store your Gemini API key in the GEMINI_API_KEY environment variable via GitHub Codespaces Secrets.\n4. Test command: Run automated tests with `uv run pytest -q` (runs offline using TestModel without an API key).\n5. Submission workflow: Push your session branch (such as lec01 or lec02) and open a Pull Request to `main` within your own fork."
+        },
+        {
+          "role": "user",
+          "content": "Please tell me the Git submission workflow for each lecture."
+        },
+        {
+          "role": "assistant",
+          "content": "{\"answer\": \"Push your session branch (such as lec01 or lec02) and open a Pull Request to `main` within your own fork.\", \"needs_review\": false}"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer questions about the AIE2026 development environment based only on the FAQ below.\nOutput a single-line JSON object in the form {\"answer\": \"<answer>\", \"needs_review\": <true|false>}, with nothing before or after it.\n- Can be answered from the FAQ: put a concise answer in answer and set needs_review to false\n- Not in the FAQ or cannot be determined: set answer to \"This is not covered in the FAQ. Please check with the course staff.\" and needs_review to true\n\nAIE2026 Cloud & Development Environment FAQ (only the 5 items below are decided; anything else requires checking with the course staff)\n1. Codespaces allowance: Personal GitHub accounts receive 120 core-hours per month free (about 60 hours on a 2-core machine).\n2. Colab GPU runtime: Use an NVIDIA T4 GPU (16 GB VRAM) on the Google Colab free tier for Lecture 02 LoRA training.\n3. API key management: Store your Gemini API key in the GEMINI_API_KEY environment variable via GitHub Codespaces Secrets.\n4. Test command: Run automated tests with `uv run pytest -q` (runs offline using TestModel without an API key).\n5. Submission workflow: Push your session branch (such as lec01 or lec02) and open a Pull Request to `main` within your own fork."
+        },
+        {
+          "role": "user",
+          "content": "What is the minimum quiz score required on Omnicampus?"
+        },
+        {
+          "role": "assistant",
+          "content": "{\"answer\": \"This is not covered in the FAQ. Please check with the course staff.\", \"needs_review\": true}"
+        }
+      ]
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "Answer questions about the AIE2026 development environment based only on the FAQ below.\nOutput a single-line JSON object in the form {\"answer\": \"<answer>\", \"needs_review\": <true|false>}, with nothing before or after it.\n- Can be answered from the FAQ: put a concise answer in answer and set needs_review to false\n- Not in the FAQ or cannot be determined: set answer to \"This is not covered in the FAQ. Please check with the course staff.\" and needs_review to true\n\nAIE2026 Cloud & Development Environment FAQ (only the 5 items below are decided; anything else requires checking with the course staff)\n1. Codespaces allowance: Personal GitHub accounts receive 120 core-hours per month free (about 60 hours on a 2-core machine).\n2. Colab GPU runtime: Use an NVIDIA T4 GPU (16 GB VRAM) on the Google Colab free tier for Lecture 02 LoRA training.\n3. API key management: Store your Gemini API key in the GEMINI_API_KEY environment variable via GitHub Codespaces Secrets.\n4. Test command: Run automated tests with `uv run pytest -q` (runs offline using TestModel without an API key).\n5. Submission workflow: Push your session branch (such as lec01 or lec02) and open a Pull Request to `main` within your own fork."
+        },
+        {
+          "role": "user",
+          "content": "Can I upgrade my Codespace to a 16-core machine and get reimbursed by the course?"
+        },
+        {
+          "role": "assistant",
+          "content": "{\"answer\": \"This is not covered in the FAQ. Please check with the course staff.\", \"needs_review\": true}"
+        }
+      ]
+    }
+  ],
+  "test": [
+    {
+      "question": "About how many hours can I use a 2-core Codespace for free each month?"
+    },
+    {
+      "question": "What is the Codespaces free tier quota for personal accounts?"
+    },
+    {
+      "question": "What is the free monthly Codespaces allowance?"
+    },
+    {
+      "question": "Which GPU runtime should I select in Google Colab?"
+    },
+    {
+      "question": "Which GPU model does the free Colab tier provide for Lecture 02?"
+    },
+    {
+      "question": "What GPU is used for Lecture 02 LoRA training in Colab?"
+    },
+    {
+      "question": "Where do I register my API key for GitHub Codespaces?"
+    },
+    {
+      "question": "How should I pass my Gemini API key?"
+    },
+    {
+      "question": "Which secret variable stores the API key in Codespaces?"
+    },
+    {
+      "question": "How can I verify that all repository tests pass?"
+    },
+    {
+      "question": "Which command runs the offline TestModel tests?"
+    },
+    {
+      "question": "What command runs the automated test suite?"
+    },
+    {
+      "question": "Which target repository and branch should my Pull Request point to?"
+    },
+    {
+      "question": "How do I submit my homework in GitHub?"
+    },
+    {
+      "question": "Where should I open the Pull Request for my session branch?"
+    },
+    {
+      "question": "Can I use an ANTHROPIC_API_KEY instead of GEMINI_API_KEY for the default grading scripts?"
+    },
+    {
+      "question": "How many reviewers must approve my Pull Request in my fork before the deadline?"
+    },
+    {
+      "question": "Can I form a 3-person team to submit a single shared repository?"
+    },
+    {
+      "question": "Does `uv run pytest -q` automatically submit my grades to Omnicampus?"
+    },
+    {
+      "question": "Is attendance on Zoom mandatory for receiving the course completion certificate?"
+    },
+    {
+      "question": "Are lecture slides available in LaTeX source format?"
+    }
+  ],
+  "gold": {
+    "About how many hours can I use a 2-core Codespace for free each month?": {
+      "needs_review": false,
+      "key": "120 core-hours",
+      "answer": "Personal GitHub accounts receive 120 core-hours per month free (about 60 hours on a 2-core machine)."
+    },
+    "What is the Codespaces free tier quota for personal accounts?": {
+      "needs_review": false,
+      "key": "120 core-hours",
+      "answer": "Personal GitHub accounts receive 120 core-hours per month free (about 60 hours on a 2-core machine)."
+    },
+    "What is the free monthly Codespaces allowance?": {
+      "needs_review": false,
+      "key": "120 core-hours",
+      "answer": "Personal GitHub accounts receive 120 core-hours per month free (about 60 hours on a 2-core machine)."
+    },
+    "Which GPU runtime should I select in Google Colab?": {
+      "needs_review": false,
+      "key": "T4",
+      "answer": "Use an NVIDIA T4 GPU (16 GB VRAM) on the Google Colab free tier for Lecture 02 LoRA training."
+    },
+    "Which GPU model does the free Colab tier provide for Lecture 02?": {
+      "needs_review": false,
+      "key": "T4",
+      "answer": "Use an NVIDIA T4 GPU (16 GB VRAM) on the Google Colab free tier for Lecture 02 LoRA training."
+    },
+    "What GPU is used for Lecture 02 LoRA training in Colab?": {
+      "needs_review": false,
+      "key": "T4",
+      "answer": "Use an NVIDIA T4 GPU (16 GB VRAM) on the Google Colab free tier for Lecture 02 LoRA training."
+    },
+    "Where do I register my API key for GitHub Codespaces?": {
+      "needs_review": false,
+      "key": "GEMINI_API_KEY",
+      "answer": "Store your Gemini API key in the GEMINI_API_KEY environment variable via GitHub Codespaces Secrets."
+    },
+    "How should I pass my Gemini API key?": {
+      "needs_review": false,
+      "key": "GEMINI_API_KEY",
+      "answer": "Store your Gemini API key in the GEMINI_API_KEY environment variable via GitHub Codespaces Secrets."
+    },
+    "Which secret variable stores the API key in Codespaces?": {
+      "needs_review": false,
+      "key": "GEMINI_API_KEY",
+      "answer": "Store your Gemini API key in the GEMINI_API_KEY environment variable via GitHub Codespaces Secrets."
+    },
+    "How can I verify that all repository tests pass?": {
+      "needs_review": false,
+      "key": "uv run pytest -q",
+      "answer": "Run automated tests with `uv run pytest -q` (runs offline using TestModel without an API key)."
+    },
+    "Which command runs the offline TestModel tests?": {
+      "needs_review": false,
+      "key": "uv run pytest -q",
+      "answer": "Run automated tests with `uv run pytest -q` (runs offline using TestModel without an API key)."
+    },
+    "What command runs the automated test suite?": {
+      "needs_review": false,
+      "key": "uv run pytest -q",
+      "answer": "Run automated tests with `uv run pytest -q` (runs offline using TestModel without an API key)."
+    },
+    "Which target repository and branch should my Pull Request point to?": {
+      "needs_review": false,
+      "key": "own fork",
+      "answer": "Push your session branch (such as lec01 or lec02) and open a Pull Request to `main` within your own fork."
+    },
+    "How do I submit my homework in GitHub?": {
+      "needs_review": false,
+      "key": "own fork",
+      "answer": "Push your session branch (such as lec01 or lec02) and open a Pull Request to `main` within your own fork."
+    },
+    "Where should I open the Pull Request for my session branch?": {
+      "needs_review": false,
+      "key": "own fork",
+      "answer": "Push your session branch (such as lec01 or lec02) and open a Pull Request to `main` within your own fork."
+    },
+    "Can I use an ANTHROPIC_API_KEY instead of GEMINI_API_KEY for the default grading scripts?": {
+      "needs_review": true,
+      "key": "",
+      "answer": "This is not covered in the FAQ. Please check with the course staff."
+    },
+    "How many reviewers must approve my Pull Request in my fork before the deadline?": {
+      "needs_review": true,
+      "key": "",
+      "answer": "This is not covered in the FAQ. Please check with the course staff."
+    },
+    "Can I form a 3-person team to submit a single shared repository?": {
+      "needs_review": true,
+      "key": "",
+      "answer": "This is not covered in the FAQ. Please check with the course staff."
+    },
+    "Does `uv run pytest -q` automatically submit my grades to Omnicampus?": {
+      "needs_review": true,
+      "key": "",
+      "answer": "This is not covered in the FAQ. Please check with the course staff."
+    },
+    "Is attendance on Zoom mandatory for receiving the course completion certificate?": {
+      "needs_review": true,
+      "key": "",
+      "answer": "This is not covered in the FAQ. Please check with the course staff."
+    },
+    "Are lecture slides available in LaTeX source format?": {
+      "needs_review": true,
+      "key": "",
+      "answer": "This is not covered in the FAQ. Please check with the course staff."
+    }
+  }
+}

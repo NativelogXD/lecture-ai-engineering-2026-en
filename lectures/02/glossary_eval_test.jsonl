@@ -1,0 +1,27 @@
+{"question": "What is AI engineering?", "category": "in_glossary_direct", "term_id": "ai-engineering"}
+{"question": "What is LoRA?", "category": "in_glossary_direct", "term_id": "lora"}
+{"question": "What is QLoRA?", "category": "in_glossary_direct", "term_id": "qlora"}
+{"question": "What is Quantization?", "category": "in_glossary_direct", "term_id": "quantization"}
+{"question": "What is Hallucination?", "category": "in_glossary_direct", "term_id": "hallucination"}
+{"question": "What is Supervised Fine-Tuning (SFT)?", "category": "in_glossary_direct", "term_id": "sft"}
+{"question": "What is PEFT?", "category": "in_glossary_direct", "term_id": "peft"}
+{"question": "What are the 3 homework levels?", "category": "in_glossary_direct", "term_id": "homework-levels"}
+{"question": "What is a lecNN-start tag?", "category": "in_glossary_direct", "term_id": "lec-start-tag"}
+{"question": "What is MCP (Model Context Protocol)?", "category": "in_glossary_direct", "term_id": "mcp"}
+{"question": "How does Low-Rank Adaptation reduce GPU memory during fine-tuning?", "category": "in_glossary_paraphrased", "term_id": "lora"}
+{"question": "How does quantizing a base model to 4-bit work when training adapters?", "category": "in_glossary_paraphrased", "term_id": "qlora"}
+{"question": "Which three difficulty tiers exist for assignments in AIE2026?", "category": "in_glossary_paraphrased", "term_id": "homework-levels"}
+{"question": "Where should I store my API key so it is not written in source code?", "category": "in_glossary_paraphrased", "term_id": "codespaces-secret"}
+{"question": "What happens when a fine-tuned model memorizes training data and fails on new inputs?", "category": "in_glossary_paraphrased", "term_id": "overfitting"}
+{"question": "Which sampling parameter controls randomness vs determinism in LLM token generation?", "category": "in_glossary_paraphrased", "term_id": "temperature"}
+{"question": "What do we call an LLM system that combines a model, a loop, and external tools?", "category": "in_glossary_paraphrased", "term_id": "ai-agent"}
+{"question": "How do we propose merging changes from a working branch into main on GitHub?", "category": "in_glossary_paraphrased", "term_id": "pull-request"}
+{"question": "What constraint or check prevents undesirable agent behavior or outputs?", "category": "in_glossary_paraphrased", "term_id": "guardrail"}
+{"question": "How do the automated pytest tests verify agent wiring without calling a paid LLM API?", "category": "in_glossary_paraphrased", "term_id": "test-model"}
+{"question": "What is Direct Preference Optimization (DPO)?", "category": "out_of_glossary", "term_id": null}
+{"question": "What is FlashAttention-2 and how does it tile GPU SRAM?", "category": "out_of_glossary", "term_id": null}
+{"question": "What is vLLM PagedAttention?", "category": "out_of_glossary", "term_id": null}
+{"question": "What is Speculative Decoding in LLM inference?", "category": "out_of_glossary", "term_id": null}
+{"question": "What is Mixture of Experts (MoE) routing?", "category": "out_of_glossary", "term_id": null}
+{"question": "What is Constitutional AI?", "category": "out_of_glossary", "term_id": null}
+{"question": "What is GraphRAG?", "category": "out_of_glossary", "term_id": null}

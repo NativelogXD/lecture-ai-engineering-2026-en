@@ -1,0 +1,201 @@
+{
+  "summary": {
+    "label": "before",
+    "n": 21,
+    "format_rate": 0.09523809523809523,
+    "content_rate": 0.0,
+    "both_rate": 0.0,
+    "seconds": 58.9
+  },
+  "rows": [
+    {
+      "question": "What is the submission deadline?",
+      "raw": "{\"answer\": \"September 30, 23:59\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false
+    },
+    {
+      "question": "Please tell me the date and time of the submission deadline.",
+      "raw": "{\"answer\": \"September 30, 23:59\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false
+    },
+    {
+      "question": "What date and time are assignments due?",
+      "raw": "{\"answer\": \"September 30, 23:59\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false
+    },
+    {
+      "question": "Where do I submit?",
+      "raw": "{\"answer\": \"The Assignments section of the learning portal\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false
+    },
+    {
+      "question": "Where are assignments submitted?",
+      "raw": "{\"answer\": \"Specify the submission destination in the Assignments section of the learning portal and submit as a single PDF file. Submission hours are held during office hours every Tuesday from 17:00 to 18:00.\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false
+    },
+    {
+      "question": "Please tell me where to turn in my work.",
+      "raw": "{\"answer\": \"The Assignments section of the learning portal\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false
+    },
+    {
+      "question": "Can I submit in a format other than PDF?",
+      "raw": "{\"answer\": \"Requires confirmation\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false
+    },
+    {
+      "question": "What file format should I submit?",
+      "raw": "{\"answer\": \"A single PDF file, named studentID_assignmentNumber.pdf\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false
+    },
+    {
+      "question": "What file format and how many files should I submit?",
+      "raw": "{\"answer\": \"A single PDF file, submit 1\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false
+    },
+    {
+      "question": "When can I ask for help?",
+      "raw": "{\"answer\": \"Office hours on Tuesdays from 17:00 to 18:00\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false
+    },
+    {
+      "question": "Please tell me the day and time of office hours.",
+      "raw": "{\"answer\": \"Tuesdays from 17:00 to 18:00\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false
+    },
+    {
+      "question": "On what day and from what time are questions accepted?",
+      "raw": "{\"answer\": \"Tuesdays from 17:00 to 18:00\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false
+    },
+    {
+      "question": "Please tell me how late submissions are handled.",
+      "raw": "{\"answer\": \"Accepted with a point deduction if within 48 hours after the deadline.\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false
+    },
+    {
+      "question": "What happens if my submission misses the deadline?",
+      "raw": "{\"answer\": \"Accepted with a point deduction if within 48 hours of the deadline\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false
+    },
+    {
+      "question": "Are assignments submitted after the deadline accepted?",
+      "raw": "{\"answer\": \"Requires confirmation\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false
+    },
+    {
+      "question": "When are grades released?",
+      "raw": "{\"answer\": \"Requires confirmation\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": true
+    },
+    {
+      "question": "Are lecture recordings made public?",
+      "raw": "{\"answer\": \"No\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": true
+    },
+    {
+      "question": "Is there a character limit for assignments?",
+      "raw": "{\"answer\": \"None\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": true
+    },
+    {
+      "question": "Will I receive feedback on submitted assignments?",
+      "raw": "{\"answer\": \"Requires confirmation\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": true
+    },
+    {
+      "question": "Are there rules for formatting references?",
+      "raw": "{\"answer\": \"Requires confirmation\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": true
+    },
+    {
+      "question": "Is an advance reservation required for office hours?",
+      "raw": "{\"answer\": \"No\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": true
+    }
+  ]
+}

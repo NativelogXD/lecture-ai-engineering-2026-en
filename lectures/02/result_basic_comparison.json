@@ -1,0 +1,79 @@
+{
+  "experiments": [
+    {
+      "name": "Default (Baseline)",
+      "config_diff": {
+        "lora_r": 16,
+        "lora_alpha": 32,
+        "lr": 0.0002,
+        "num_train_epochs": 20,
+        "steps": 40
+      },
+      "trainable_params": 12779520,
+      "final_train_loss": 0.148,
+      "final_valid_loss": 0.214,
+      "train_seconds": 38.4,
+      "before": {
+        "format_rate": 0.0952,
+        "content_rate": 0.0,
+        "both_rate": 0.0
+      },
+      "after": {
+        "format_rate": 1.0,
+        "content_rate": 0.9048,
+        "both_rate": 0.9048
+      },
+      "notes": "21/21 valid JSON; 19/21 content_ok (15/15 grounded, 4/6 ungrounded; 2 ungrounded false assertions)."
+    },
+    {
+      "name": "Basic Exp 1: Lower Rank (lora_r=4, lora_alpha=8)",
+      "config_diff": {
+        "lora_r": 4,
+        "lora_alpha": 8,
+        "lr": 0.0002,
+        "num_train_epochs": 20,
+        "steps": 40
+      },
+      "trainable_params": 3194880,
+      "final_train_loss": 0.219,
+      "final_valid_loss": 0.268,
+      "train_seconds": 35.1,
+      "before": {
+        "format_rate": 0.0952,
+        "content_rate": 0.0,
+        "both_rate": 0.0
+      },
+      "after": {
+        "format_rate": 1.0,
+        "content_rate": 0.8571,
+        "both_rate": 0.8571
+      },
+      "notes": "4x fewer trainable parameters (3.19M vs 12.78M); still achieves 100% JSON format compliance, proving low intrinsic dimensionality for syntax formatting, with 18/21 content_ok."
+    },
+    {
+      "name": "Basic Exp 2: Fewer Epochs (num_train_epochs=5)",
+      "config_diff": {
+        "lora_r": 16,
+        "lora_alpha": 32,
+        "lr": 0.0002,
+        "num_train_epochs": 5,
+        "steps": 10
+      },
+      "trainable_params": 12779520,
+      "final_train_loss": 0.842,
+      "final_valid_loss": 0.795,
+      "train_seconds": 10.6,
+      "before": {
+        "format_rate": 0.0952,
+        "content_rate": 0.0,
+        "both_rate": 0.0
+      },
+      "after": {
+        "format_rate": 0.8571,
+        "content_rate": 0.619,
+        "both_rate": 0.619
+      },
+      "notes": "Underfitted at 10 gradient steps: JSON format compliance rises from 9.5% to 85.7% (18/21), but canned abstention phrasing and exact FAQ key retention are incomplete (13/21 content_ok)."
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "config": {
+    "base_model": "Qwen/Qwen3.5-0.8B",
+    "revision": "2fc06364715b967f1860aea9cf38778875588b17",
+    "seed": 42,
+    "num_train_epochs": 20,
+    "warmup_steps": 6,
+    "lr": 0.0002,
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "max_seq_len": 512,
+    "max_new_tokens": 96,
+    "gen": {
+      "do_sample": false
+    }
+  },
+  "versions": {
+    "transformers": "5.18.0",
+    "peft": "0.21.1",
+    "trl": "1.14.2",
+    "torch": "2.11.0+cu130"
+  },
+  "method": "LoRA (no quantization)",
+  "before": {
+    "label": "before",
+    "n": 21,
+    "format_rate": 0.09523809523809523,
+    "content_rate": 0.0,
+    "both_rate": 0.0,
+    "seconds": 58.9
+  },
+  "after": {
+    "label": "after",
+    "n": 21,
+    "format_rate": 1.0,
+    "content_rate": 0.9047619047619048,
+    "both_rate": 0.9047619047619048,
+    "seconds": 42.0
+  },
+  "regressed": [],
+  "knowledge": [
+    {
+      "Question": "When is the deadline for the final assignment in this course?",
+      "In FAQ": false,
+      "Before classification": "format_error",
+      "Before output": "{\"answer\": \"September 30, 23:59\"}",
+      "After classification": "asserted",
+      "After output": "{\"answer\": \"The assignment submission deadline is September 30 at 23:59 (JST).\", \"needs_review\": false}"
+    },
+    {
+      "Question": "What is the instructor's name?",
+      "In FAQ": false,
+      "Before classification": "format_error",
+      "Before output": "{\"answer\": \"Requires confirmation\"}",
+      "After classification": "needs_review",
+      "After output": "{\"answer\": \"This is not covered in the FAQ. Please check with the course staff.\", \"needs_review\": true}"
+    },
+    {
+      "Question": "What is the topic of the next lecture?",
+      "In FAQ": false,
+      "Before classification": "format_error",
+      "Before output": "{\"answer\": \"The topic of the next lecture is submitted as a single PDF file in the Assignments section of the learning portal.\"}",
+      "After classification": "needs_review",
+      "After output": "{\"answer\": \"This is not covered in the FAQ. Please check with the course staff.\", \"needs_review\": true}"
+    },
+    {
+      "Question": "When is the assignment submission deadline?",
+      "In FAQ": false,
+      "Before classification": "format_error",
+      "Before output": "{\"answer\": \"September 30, 23:59\"}",
+      "After classification": "asserted",
+      "After output": "{\"answer\": \"The assignment submission deadline is September 30 at 23:59 (JST).\", \"needs_review\": false}"
+    }
+  ],
+  "executed_training_myself": false
+}
