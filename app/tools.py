@@ -5,10 +5,14 @@ Rewriting descriptions changes whether the model uses a tool and which arguments
 """
 
 import json
+import random
+import re
+from datetime import datetime, timezone
 from functools import cache
 from pathlib import Path
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
+LEARNING_LOG_DIR = Path(__file__).resolve().parent.parent / "learning_log"
 MAX_RESULTS = 3
 
 
@@ -77,3 +81,52 @@ def get_lecture_summary(lecture: int) -> str:
         available = sorted(p.stem for p in (DATA_DIR / "lectures").glob("*.md"))
         return f"Key points for Lecture {lecture:02d} are not available yet. Available sessions: {', '.join(available)}"
     return path.read_text(encoding="utf-8")
+
+
+def make_quiz(lecture: int) -> str:
+    """Pick one term from the given lecture and return a review question and its answer.
+
+    Use when asked for review questions, such as "Give me one review question from Lecture 02".
+    """
+    terms = [e for e in load_glossary() if e.get("lecture") == lecture]
+    if not terms:
+        available = sorted({int(e["lecture"]) for e in load_glossary() if "lecture" in e})
+        available_str = ", ".join(f"{n:02d}" for n in available)
+        return (
+            f"No glossary terms found for Lecture {lecture:02d}. "
+            f"Available lectures: {available_str}"
+        )
+    chosen = random.choice(terms)
+    return json.dumps(
+        {
+            "question": f"What does {chosen['term']} mean?",
+            "answer": chosen["definition"],
+        },
+        ensure_ascii=False,
+    )
+
+
+def save_learning_log(topic: str, content: str) -> str:
+    """Save a learning record (topic and summary notes) as a Markdown file in learning_log/.
+
+    Use when the learner explicitly asks to record, log, or save their study notes or learning progress.
+    """
+    slug = re.sub(r"[^a-z0-9]+", "-", topic.casefold()).strip("-") or "note"
+    LEARNING_LOG_DIR.mkdir(parents=True, exist_ok=True)
+    log_path = LEARNING_LOG_DIR / f"{slug}.md"
+    timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
+    entry = f"# {topic.strip() or 'Learning Note'}\n\n- **Saved at**: {timestamp}\n\n{content.strip()}\n"
+    if log_path.exists():
+        existing = log_path.read_text(encoding="utf-8")
+        log_path.write_text(existing.rstrip() + "\n\n---\n\n" + entry, encoding="utf-8")
+    else:
+        log_path.write_text(entry, encoding="utf-8")
+    return json.dumps(
+        {
+            "status": "saved",
+            "topic": topic,
+            "path": f"learning_log/{log_path.name}",
+        },
+        ensure_ascii=False,
+    )
+

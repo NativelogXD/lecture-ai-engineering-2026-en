@@ -16,7 +16,9 @@ import inspect
 import json
 from pathlib import Path
 
-from pydantic_ai import Agent
+from typing import Callable
+
+from pydantic_ai import Agent, DeferredToolRequests, DeferredToolResults
 from pydantic_ai.exceptions import ModelHTTPError
 from fastmcp import Client
 from pydantic_ai.mcp import MCPToolset, StdioTransport
@@ -32,17 +34,22 @@ INSTRUCTIONS = """\
 You are a learning support agent for the AI Engineering Pilot Course (AIE2026).
 - Always check the glossary with search_glossary before answering about terms or course-specific information.
 - Use get_lecture_summary when asked about the content of a session.
+- Use make_quiz when asked for a review question from a specific lecture.
+- Use save_learning_log when asked to save or record a learning log or study note.
 - If something is absent from the glossary, say "It is not in the glossary" instead of making assertions based on guesses.
 - End your answer by indicating the relevant session (Lecture NN).
 - Guide learners with hints on how to think, rather than writing homework answers for them.
 """
 
 # Pass the model at runtime (so tests can substitute TestModel without calling an API)
-agent = Agent(instructions=INSTRUCTIONS)
+agent = Agent(
+    instructions=INSTRUCTIONS,
+    output_type=[str, DeferredToolRequests],
+)
 agent.tool_plain(tools.search_glossary)
 agent.tool_plain(tools.get_lecture_summary)
-
-# TODO(Lecture 03 exercise): create make_quiz in tools.py and register it here
+agent.tool_plain(tools.make_quiz)
+agent.tool_plain(tools.save_learning_log, requires_approval=True)
 
 # Lecture 05: MCP server configuration file. Uses the same "mcpServers" format as Claude Desktop and Cursor
 MCP_CONFIG = Path(__file__).resolve().parent / "mcp_servers.json"
@@ -110,6 +117,34 @@ def print_trace(result) -> None:
     print(f"[usage] {result.usage}")
 
 
+def resolve_approvals(
+    target: Agent,
+    result,
+    model,
+    confirm_fn: Callable[[ToolCallPart], bool] | None = None,
+):
+    """Handle human-in-the-loop tool approvals (DeferredToolRequests -> DeferredToolResults)."""
+    if confirm_fn is None:
+        def _prompt_user(call: ToolCallPart) -> bool:
+            reply = input(
+                f"[approval required] Allow {call.tool_name}({call.args})? [y/N]: "
+            ).strip().lower()
+            return reply in ("y", "yes")
+        confirm_fn = _prompt_user
+
+    while isinstance(result.output, DeferredToolRequests):
+        approvals = {
+            call.tool_call_id: confirm_fn(call)
+            for call in result.output.approvals
+        }
+        result = target.run_sync(
+            model=model,
+            message_history=result.all_messages(),
+            deferred_tool_results=DeferredToolResults(approvals=approvals),
+        )
+    return result
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Ask the learning support agent a question")
     parser.add_argument("question", nargs="?")
@@ -128,8 +163,10 @@ def main() -> None:
     print(f"[model] {MODEL}")
     if args.mcp:
         print("[tools] MCP servers (app/mcp_servers.json)")
+    model = build_model()
     try:
-        result = target.run_sync(args.question, model=build_model())
+        result = target.run_sync(args.question, model=model)
+        result = resolve_approvals(target, result, model=model)
     except ModelHTTPError as e:
         print(api_error_message(e.status_code, str(e.body)[:200]))
         raise SystemExit(1)
