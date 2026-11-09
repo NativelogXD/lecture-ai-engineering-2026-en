@@ -9,9 +9,11 @@ from pydantic_ai import DeferredToolRequests
 from pydantic_ai.messages import ToolCallPart, ToolReturnPart
 from pydantic_ai.models.test import TestModel
 
-from app.agent import agent
+from app import tools
+from app.agent import agent, resolve_approvals
 
 BASE_TOOLS = {"search_glossary", "get_lecture_summary"}
+LECTURE03_TOOLS = {"search_glossary", "get_lecture_summary", "make_quiz", "save_learning_log"}
 
 
 def _parts(result, kind):
@@ -40,3 +42,27 @@ def test_glossary_result_reaches_the_model():
         result = agent.run_sync("What is RAG?")
     returns = _parts(result, ToolReturnPart)
     assert returns and returns[0].tool_name == "search_glossary"
+
+
+def test_make_quiz_tool_is_registered_and_callable():
+    model = TestModel(call_tools=["make_quiz"])
+    with agent.override(model=model):
+        result = agent.run_sync("Give me one review question from Lecture 02")
+    returns = _parts(result, ToolReturnPart)
+    assert returns and returns[0].tool_name == "make_quiz"
+
+
+def test_save_learning_log_requires_approval_and_executes_when_approved(tmp_path, monkeypatch):
+    monkeypatch.setattr(tools, "LEARNING_LOG_DIR", tmp_path)
+    model = TestModel(call_tools=["save_learning_log"])
+    result = agent.run_sync("Save a note about agents", model=model)
+    assert isinstance(result.output, DeferredToolRequests)
+    assert len(result.output.approvals) == 1
+    assert result.output.approvals[0].tool_name == "save_learning_log"
+
+    final_result = resolve_approvals(agent, result, model=model, confirm_fn=lambda _: True)
+    assert isinstance(final_result.output, str)
+    returns = _parts(final_result, ToolReturnPart)
+    assert any(r.tool_name == "save_learning_log" for r in returns)
+    assert list(tmp_path.glob("*.md"))
+
